@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Platform from './Platform';
 import './styles.css';
 
@@ -19,7 +17,7 @@ class Accounts extends Component {
               <Card.Header>Accounts</Card.Header>
               <Card.Body>
                 <Card.Title>Manage your linked accounts</Card.Title>
-                <Platform className='test' name='Swedbank' />
+                <Platform name='Swedbank' />
                 <Platform name='SEB' />
                 <Platform name='Luminor' />
               </Card.Body>

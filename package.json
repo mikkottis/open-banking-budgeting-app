@@ -2,7 +2,7 @@
   "name": "open-banking-budgeting-app",
   "version": "0.1.0",
   "private": true,
-  "main": "src/start.js",
+  "main": "src/main/index.js",
   "homepage": "./",
   "build": {
     "appId": "some.id.ofyours",
