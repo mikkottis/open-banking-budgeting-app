@@ -1,0 +1,7 @@
+.accountsCard {
+  width: 100%;
+}
+
+.platformCard + .platformCard {
+  margin-top: 20px;
+}
