@@ -4,15 +4,17 @@ import { Col, Container, Row, Tabs, Tab } from 'react-bootstrap';
 import Accounts from './Accounts';
 import Budgets from './Budgets';
 import Overview from './Overview';
+import Transactions from './Transactions';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 
 const App = props => {
   return (
     <Container>
       <Row>
         <Col>
-          <Tabs defaultActiveKey='accounts'>
+          <Tabs defaultActiveKey='transactions'>
             <Tab eventKey='overview' title='Overview'>
               <Overview />
             </Tab>
@@ -21,6 +23,9 @@ const App = props => {
             </Tab>
             <Tab eventKey='budgets' title='Budgets'>
               <Budgets />
+            </Tab>
+            <Tab eventKey='transactions' title='Transactions'>
+              <Transactions />
             </Tab>
           </Tabs>
         </Col>

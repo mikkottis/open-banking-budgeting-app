@@ -4,6 +4,6 @@ exports.getAccounts = (platformName) => {
   return accounts[platformName.toLowerCase()];
 }
 
-exports.getAccount = (platformName, resourceId) => {
-  return accounts[platformName.toLowerCase()].find(account => account.resourceId === resourceId);
+exports.getAccount = (platformName, accountId) => {
+  return accounts[platformName.toLowerCase()].find(account => account.resourceId === accountId);
 }

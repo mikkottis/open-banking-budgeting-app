@@ -11,13 +11,13 @@ class ConsentModal extends Component {
   constructor(props) {
     super(props);
 
-    this.accounts = getAccounts(props.name);
     this.onSync = this.onSync.bind(this);
     this.onClose = this.onClose.bind(this);
 
     this.state = {
       isSaving: false,
-      selectedAccounts: new Set()
+      selectedAccounts: new Set(),
+      accounts: getAccounts(props.name)
     }
   }
 
@@ -63,7 +63,9 @@ class ConsentModal extends Component {
   }
 
   renderAccounts() {
-    const rows = this.accounts.map(account => {
+    const { accounts } = this.state;
+
+    const rows = accounts.map(account => {
       return (
         <tr key={account.resourceId}>
           <td><input type='checkbox' onChange={(event) => this.onSelectAccount(event, account.resourceId)}/></td>

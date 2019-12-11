@@ -1,0 +1,210 @@
+{
+  "3a4ddc7c-e904-4709-a7f5-b7d215018502": [
+    {
+        "id": "b381e074-af1a-43d7-a885-18a62ae4ccd8",
+        "transactionAmount": {
+            "currency": "EUR",
+            "amount": "4"
+        },
+        "bookingDate": "2019-02-13",
+        "valueDate": "2019-02-13",
+        "creditorAccount": {
+            "iban": "EE521294476381964418"
+        },
+        "creditorName": "Bolt",
+        "creditorId": {
+            "id": "db082f9b-3c68-4572-8e66-cfe7d3829bb6",
+            "type": "prvtId",
+            "schemeNameCode": "NIDN"
+        },
+        "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    },
+    {
+      "id": "f0029fbd-194e-4c10-9b65-578e91278d93",
+      "transactionAmount": {
+          "currency": "EUR",
+          "amount": "100"
+      },
+      "bookingDate": "2019-02-13",
+      "valueDate": "2019-02-13",
+      "creditorAccount": {
+          "iban": "EE041246175355256647"
+      },
+      "creditorName": "Eha Tamm",
+      "creditorId": {
+          "id": "a5c561b9-c63f-4902-a1ce-94dea86c33e7",
+          "type": "prvtId",
+          "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "2bb9d53c-0fdd-43ff-b670-342fbcb0536b": [
+    {
+      "id": "b9bc376f-6c05-4f1d-86f7-936cefcf4e1e",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "6"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE141218145523551462"
+      },
+      "creditorName": "Uber",
+      "creditorId": {
+        "id": "ead67d5b-a053-4f95-91a3-9519b7e802f9",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "7825ad19-7b62-40aa-b68e-7dbff9b85bfc": [
+    {
+      "id": "9b4d9987-2902-4186-9268-6a7ae245f709",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "34"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE971254111272723717"
+      },
+      "creditorName": "Rimi",
+      "creditorId": {
+        "id": "3b7327a1-c783-4f01-83cb-e1071701921e",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "0b42d712-0258-4081-9907-f759c303a0be": [
+    {
+      "id": "6984fd8d-71f2-47cb-b227-1e235b0d02dd",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "12"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE091254216651246189"
+      },
+      "creditorName": "Coca-Cola Plaza",
+      "creditorId": {
+        "id": "22f7fd59-00c4-496f-b26d-f6beeb34e7c1",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "5c44fcf5-709f-4205-894c-ba9f5b2ec004": [
+    {
+      "id": "af42b32b-894f-422b-8b60-e8541dd1287e",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "6"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE881272324374752947"
+      },
+      "creditorName": "Spotify",
+      "creditorId": {
+        "id": "623fccf5-5e27-42d1-82eb-afdfe8bc6d69",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "d9a1b050-6944-4314-868f-822dfd3a608d": [
+    {
+      "id": "cf27b855-619d-4885-9519-eaa84d8c1939",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "3"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE281249921952441174"
+      },
+      "creditorName": "Uber",
+      "creditorId": {
+        "id": "ead67d5b-a053-4f95-91a3-9519b7e802f9",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "48db5f69-e752-4d8a-81de-f5e83aaea05f": [
+    {
+      "id": "1b36184f-07a9-4a1e-ac20-bed570a44778",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "50"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE141237284367586276"
+      },
+      "creditorName": "Eha Tamm",
+      "creditorId": {
+        "id": "a5c561b9-c63f-4902-a1ce-94dea86c33e7",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "97764a93-1683-4a9f-8e6d-b9efb088079f": [
+    {
+      "id": "b1321994-31d6-4b22-8cee-3b9462cb27d8",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "13"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE871282814191996923"
+      },
+      "creditorName": "Netflix",
+      "creditorId": {
+        "id": "5a1069c1-7499-47bc-afce-7a3be033990b",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ],
+  "739450f5-01e0-4c2f-919b-4c2fd5dcc555": [
+    {
+      "id": "ffc6d8a1-8714-41a3-9ad4-4ceaecbb19a7",
+      "transactionAmount": {
+        "currency": "EUR",
+        "amount": "5"
+      },
+      "bookingDate": "2019-02-14",
+      "valueDate": "2019-02-14",
+      "creditorAccount": {
+        "iban": "EE381251923739921683"
+      },
+      "creditorName": "Yandex",
+      "creditorId": {
+        "id": "c9c96a8b-866a-470a-a255-67050072a566",
+        "type": "prvtId",
+        "schemeNameCode": "NIDN"
+      },
+      "creditorAddress": "Street 19-4, Tallinn, Estonia"
+    }
+  ]
+}

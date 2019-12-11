@@ -1,0 +1,113 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button, Card, Table } from 'react-bootstrap';
+
+import TransactionCategoryModal from './TransactionCategoryModal';
+import './styles.css';
+
+const { getTransactions } = window.require('electron').remote.require('./API/transactions');
+const { getTransactionCategory } = window.require('electron').remote.require('./API/transactionCategories');
+const { getBudget } = window.require('electron').remote.require('./API/budgets');
+
+class AccountTransactions extends Component {
+  constructor(props) {
+    super(props);
+
+    this.closeModal = this.closeModal.bind(this);
+
+    this.state = {
+      isModalVisible: false,
+      transactions: getTransactions(props.accountId),
+      selectedTransaction: null
+    }
+  }
+
+  closeModal() {
+    const { accountId } = this.props;
+
+    this.setState({
+      isModalVisible: false,
+      budgets: getTransactions(accountId)
+    });
+  }
+
+  renderCategoryButton(transaction) {
+    const transactionCategory = getTransactionCategory(transaction.creditorId.id);
+    const budget = getBudget(transactionCategory);
+    const text = !budget ? 'None' : budget.name;
+
+    return (
+      <Button
+        variant='primary'
+        onClick={() => this.setState({
+          isModalVisible: true,
+          selectedTransaction: transaction
+        })}
+      >
+        {text}
+      </Button>
+    );
+  }
+
+  renderTransactions() {
+    const { transactions } = this.state;
+
+    if (!transactions) {
+      return 'No transactions found';
+    }
+
+    const rows = transactions.map(transaction => {  
+      return (
+        <tr key={transaction.id}>
+          <td>{transaction.valueDate}</td>
+          <td>{transaction.creditorName}</td>
+          <td>{`${transaction.transactionAmount.amount} ${transaction.transactionAmount.currency}`}</td>
+          <td className='categoryButton'>{this.renderCategoryButton(transaction)}</td>
+        </tr>
+      )
+    });
+
+    return (
+      <Table>
+        <thead>
+          <tr>
+            <th className='transactionsTableHeader'>Date</th>
+            <th className='transactionsTableHeader'>To</th>
+            <th className='transactionsTableHeader'>Amount</th>
+            <th className='transactionsTableHeader'></th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </Table>
+    );
+  }
+
+  render() {
+    const { accountName, accountIban } = this.props;
+    const { isModalVisible, selectedTransaction } = this.state;
+
+    return (
+      <Card className='accountTransactionCard'>
+        <Card.Body>
+          <Card.Title>{`${accountName} - ${accountIban}`}</Card.Title>
+          {this.renderTransactions()}
+          <TransactionCategoryModal
+            isVisible={isModalVisible}
+            handleClose={this.closeModal}
+            transaction={selectedTransaction}
+          />
+        </Card.Body>
+      </Card>
+    );
+  }
+}
+
+AccountTransactions.propTypes = {
+  accountName: PropTypes.string.isRequired,
+  accountIban: PropTypes.string.isRequired,
+  accountId: PropTypes.string.isRequired
+};
+
+export default AccountTransactions
