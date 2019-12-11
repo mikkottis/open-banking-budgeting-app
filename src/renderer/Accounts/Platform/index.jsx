@@ -1,20 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Container, Table } from 'react-bootstrap';
 
+import ConsentModal from './ConsentModal';
 import LoadingButton from '../../components/LoadingButton';
 
-const { authenticate, hasToken, unauthenticate } = window.require('electron').remote.require('./API/authenticate');
+const { authenticate, hasToken, unauthenticate } = window.require('electron').remote.require('./API/authentication');
+const { getAccount } = window.require('electron').remote.require('./API/accounts');
+const { getConsent } = window.require('electron').remote.require('./API/consents');
 
 class Platform extends Component {
   constructor(props) {
     super(props);
 
+    this.closeConsentModal = this.closeConsentModal.bind(this);
+
     this.state = {
       isAuthenticated: hasToken(props.name),
       isAuthenticating: false,
-      isUnauthenticating: false
+      isUnauthenticating: false,
+      isConsentModalVisible: false,
+      connectedAccounts: this.getConnectedAccounts()
     }
+  }
+
+  getConnectedAccounts() {
+    const { name } = this.props;
+
+    const consent = getConsent(name);
+
+    if (!consent) return [];
+
+    return consent.accounts.map(account => getAccount(name, account.resourceId));
   }
 
   onAuthenticate() {
@@ -24,7 +41,8 @@ class Platform extends Component {
       await authenticate(name);
       this.setState({
         isAuthenticated: true,
-        isAuthenticating: false
+        isAuthenticating: false,
+        isConsentModalVisible: true
       });
     });
   }
@@ -36,20 +54,52 @@ class Platform extends Component {
       await unauthenticate(name);
       this.setState({
         isAuthenticated: false,
-        isUnauthenticating: false
+        isUnauthenticating: false,
+        connectedAccounts: []
       });
     });
   }
 
+  closeConsentModal() {
+    this.setState({
+      isConsentModalVisible: false,
+      connectedAccounts: this.getConnectedAccounts()
+    });
+  }
+
   renderAccountSelection() {
-    const { isUnauthenticating } = this.state;
+    const { connectedAccounts, isUnauthenticating } = this.state;
+
+    const rows = connectedAccounts.map(account => {
+      return (
+        <tr key={account.resourceId}>
+          <td>{account.name}</td>
+          <td>{account.iban}</td>
+        </tr>
+      )
+    });
 
     return (
-      <LoadingButton
-        title='Disconnect'
-        loading={isUnauthenticating}
-        onClick={() => this.onUnauthenticate()}
-      />
+      <React.Fragment>
+        {connectedAccounts.length > 0 && (
+          <Table>
+            <thead>
+              <tr>
+                <th>Account name</th>
+                <th>IBAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows}
+            </tbody>
+          </Table>
+          )}
+        <LoadingButton
+          title='Disconnect'
+          loading={isUnauthenticating}
+          onClick={() => this.onUnauthenticate()}
+        />
+      </React.Fragment>
     )
   }
 
@@ -67,13 +117,18 @@ class Platform extends Component {
 
   render() {
     const { name } = this.props;
-    const { isAuthenticated } = this.state;
+    const { isAuthenticated, isConsentModalVisible } = this.state;
 
     return (
       <Card className='platformCard'>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           {isAuthenticated ? this.renderAccountSelection() : this.renderAuthenticateButton()}
+          <ConsentModal
+            name={name}
+            isVisible={isConsentModalVisible}
+            handleClose={this.closeConsentModal}
+          />
         </Card.Body>
       </Card>
     );

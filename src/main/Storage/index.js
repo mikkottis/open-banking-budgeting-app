@@ -2,16 +2,24 @@ const electron = require('electron');
 const path = require('path');
 const fs = require('fs');
 
-const parseFile = (filePath) => {
-  if (!fs.existsSync(filePath)) {
+const parseFile = (path) => {
+  if (!fs.existsSync(path)) {
     return {};
   }
 
-  return JSON.parse(fs.readFileSync(filePath));
+  return JSON.parse(fs.readFileSync(path));
 }
 
 const writeFile = (path, data) => {
   fs.writeFileSync(path, JSON.stringify(data));
+}
+
+const unlinkFile = (path) => {
+  if (!fs.existsSync(path)) {
+    return;
+  }
+
+  fs.unlinkSync(path);
 }
 
 class Storage {
@@ -35,7 +43,7 @@ class Storage {
     delete this.data[key];
 
     if (Object.entries(this.data).length === 0) {
-      fs.unlinkSync(this.path);
+      unlinkFile(this.path);
       return;
     }
 
