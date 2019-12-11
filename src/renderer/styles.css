@@ -1,4 +1,11 @@
 .tabCard {
   width: 100%;
-  
+}
+
+.tableHeader {
+  width: 25%;
+}
+
+.tableActionColumn {
+  text-align: right;
 }

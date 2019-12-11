@@ -14,7 +14,7 @@ const App = props => {
     <Container>
       <Row>
         <Col>
-          <Tabs defaultActiveKey='transactions'>
+          <Tabs defaultActiveKey='overview'>
             <Tab eventKey='overview' title='Overview'>
               <Overview />
             </Tab>

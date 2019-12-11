@@ -55,7 +55,7 @@ class Budgets extends Component {
         <tr key={key}>
           <td>{budget.name}</td>
           <td>{budget.amount}</td>
-          <td><Button variant='danger' onClick={() => this.onDeleteBudget(key)}>Delete</Button></td>
+          <td className='tableActionColumn'><Button variant='danger' onClick={() => this.onDeleteBudget(key)}>Delete</Button></td>
         </tr>
       )
     });
@@ -64,8 +64,8 @@ class Budgets extends Component {
       <Table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Amount</th>
+            <th className='tableHeader'>Name</th>
+            <th className='tableHeader'>Amount</th>
             <th></th>
           </tr>
         </thead>

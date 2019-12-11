@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Button, Card, Table } from 'react-bootstrap';
 
 import TransactionCategoryModal from './TransactionCategoryModal';
-import './styles.css';
 
 const { getTransactions } = window.require('electron').remote.require('./API/transactions');
 const { getTransactionCategory } = window.require('electron').remote.require('./API/transactionCategories');
@@ -62,7 +61,7 @@ class AccountTransactions extends Component {
           <td>{transaction.valueDate}</td>
           <td>{transaction.creditorName}</td>
           <td>{`${transaction.transactionAmount.amount} ${transaction.transactionAmount.currency}`}</td>
-          <td className='categoryButton'>{this.renderCategoryButton(transaction)}</td>
+          <td className='tableActionColumn'>{this.renderCategoryButton(transaction)}</td>
         </tr>
       )
     });
@@ -71,10 +70,10 @@ class AccountTransactions extends Component {
       <Table>
         <thead>
           <tr>
-            <th className='transactionsTableHeader'>Date</th>
-            <th className='transactionsTableHeader'>To</th>
-            <th className='transactionsTableHeader'>Amount</th>
-            <th className='transactionsTableHeader'></th>
+            <th className='tableHeader'>Date</th>
+            <th className='tableHeader'>To</th>
+            <th className='tableHeader'>Amount</th>
+            <th className='tableHeader'></th>
           </tr>
         </thead>
         <tbody>

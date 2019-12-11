@@ -85,8 +85,8 @@ class Platform extends Component {
           <Table>
             <thead>
               <tr>
-                <th>Account name</th>
-                <th>IBAN</th>
+                <th className='tableHeader'>Account name</th>
+                <th className='tableHeader'>IBAN</th>
               </tr>
             </thead>
             <tbody>
