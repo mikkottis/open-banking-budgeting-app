@@ -33,7 +33,7 @@ class AccountTransactions extends Component {
   renderCategoryButton(transaction) {
     const transactionCategory = getTransactionCategory(transaction.creditorId.id);
     const budget = getBudget(transactionCategory);
-    const text = !budget ? 'None' : budget.name;
+    const text = !budget ? 'Uncategorized' : budget.name;
 
     return (
       <Button

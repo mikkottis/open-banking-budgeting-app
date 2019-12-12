@@ -10,10 +10,6 @@ const { getTransactions } = window.require('electron').remote.require('./API/tra
 const { getTransactionCategory } = window.require('electron').remote.require('./API/transactionCategories');
 
 class Overview extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getAllTransactions() {
     const platforms = ['swedbank', 'seb', 'luminor'];
     const transactions = [];
@@ -42,10 +38,10 @@ class Overview extends Component {
       const transactionCategory = getTransactionCategory(transaction.creditorId.id);
 
       if (!transactionCategory) {
-        if (!transactionsByBudget['N/A']) {
-          transactionsByBudget['N/A'] = 0;
+        if (!transactionsByBudget['Uncategorized']) {
+          transactionsByBudget['Uncategorized'] = 0;
         }
-        transactionsByBudget['N/A'] += Number(transaction.transactionAmount.amount);
+        transactionsByBudget['Uncategorized'] += Number(transaction.transactionAmount.amount);
         return;
       }
 
@@ -58,13 +54,28 @@ class Overview extends Component {
     return transactionsByBudget;
   }
 
-  renderOverviewTable() {
+  renderOverviewRows() {
     const transactionsByBudget = this.calculateBudgets();
     const budgets = getBudgets();
+
+    if (Object.keys(budgets).length === 0) {
+      return 'No budgets to track';
+    }
 
     const rows = Object.keys(transactionsByBudget).map(budgetId => {
       const budgetExpenses = transactionsByBudget[budgetId];
       const budget = budgets[budgetId];
+
+      if (!budget) {
+        return (
+          <tr key='uncategorized'>
+            <td>Uncategorized</td>
+            <td>N/A</td>
+            <td>{budgetExpenses}</td>
+            <td>{0 - budgetExpenses}</td>
+          </tr>
+        );
+      }
 
       return (
         <tr key={budgetId}>
@@ -76,6 +87,10 @@ class Overview extends Component {
       );
     });
 
+    return rows;
+  }
+
+  renderOverviewTable() {
     return (
       <Table>
         <thead>
@@ -87,7 +102,7 @@ class Overview extends Component {
           </tr>
         </thead>
         <tbody>
-          {rows}
+          {this.renderOverviewRows()}
         </tbody>
       </Table>
     );
