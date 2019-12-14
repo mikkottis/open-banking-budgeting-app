@@ -97,7 +97,7 @@ class Overview extends Component {
           <tr>
             <th className='tableHeader'>Eelarve</th>
             <th className='tableHeader'>Ettenähtud</th>
-            <th className='tableHeader'>Kulutad</th>
+            <th className='tableHeader'>Kulutatud</th>
             <th className='tableHeader'>Jääk</th>
           </tr>
         </thead>
