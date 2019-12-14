@@ -57,12 +57,12 @@ class TransactionCategoryModal extends Component {
     return (
       <Modal show={isVisible} onHide={this.onClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Set transaction category</Modal.Title>
+          <Modal.Title>Määra tehingule kategooria</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <InputGroup>
             <InputGroup.Prepend>
-              <InputGroup.Text>Category</InputGroup.Text>
+              <InputGroup.Text>Kategooria</InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl
               as='select'
@@ -74,10 +74,10 @@ class TransactionCategoryModal extends Component {
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={this.onClose}>
-            Close
+            Sulge
           </Button>
           <LoadingButton
-            title='Save'
+            title='Salvesta'
             loading={isSaving}
             onClick={this.onSave}
           />

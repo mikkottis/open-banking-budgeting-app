@@ -33,7 +33,7 @@ class AccountTransactions extends Component {
   renderCategoryButton(transaction) {
     const transactionCategory = getTransactionCategory(transaction.creditorId.id);
     const budget = getBudget(transactionCategory);
-    const text = !budget ? 'Uncategorized' : budget.name;
+    const text = !budget ? 'Kategoriseerimata' : budget.name;
 
     return (
       <Button
@@ -52,7 +52,7 @@ class AccountTransactions extends Component {
     const { transactions } = this.state;
 
     if (!transactions) {
-      return 'No transactions found';
+      return 'Tehingud puuduvad.';
     }
 
     const rows = transactions.map(transaction => {  
@@ -70,9 +70,9 @@ class AccountTransactions extends Component {
       <Table>
         <thead>
           <tr>
-            <th className='tableHeader'>Date</th>
-            <th className='tableHeader'>To</th>
-            <th className='tableHeader'>Amount</th>
+            <th className='tableHeader'>Kuupäev</th>
+            <th className='tableHeader'>Saaja</th>
+            <th className='tableHeader'>Summa</th>
             <th className='tableHeader'></th>
           </tr>
         </thead>

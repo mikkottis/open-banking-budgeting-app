@@ -45,11 +45,11 @@ class ConsentModal extends Component {
     return (
       <Modal show={isVisible} onHide={this.onClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add a new budget category</Modal.Title>
+          <Modal.Title>Lisa uus eelarve</Modal.Title>
         </Modal.Header>
         <Modal.Body className='budgetModalBody'>
           <FormControl
-            placeholder='Category name'
+            placeholder='Eelarve nimi'
             onChange={(event) => this.setState({ name: event.target.value })}
           />
           <InputGroup>
@@ -58,17 +58,17 @@ class ConsentModal extends Component {
             </InputGroup.Prepend>
             <FormControl
               type='number'
-              placeholder='Amount'
+              placeholder='Summa'
               onChange={(event) => this.setState({ amount: event.target.value })}
             />
           </InputGroup>
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={this.onClose}>
-            Close
+            Sulge
           </Button>
           <LoadingButton
-            title='Add'
+            title='Lisa'
             loading={isCreating}
             onClick={this.onCreate}
           />

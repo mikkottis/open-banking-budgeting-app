@@ -10,9 +10,9 @@ class Accounts extends Component {
       <Container>
         <Row>
             <Card className='tabCard'>
-              <Card.Header>Accounts</Card.Header>
+              <Card.Header>Kontod</Card.Header>
               <Card.Body>
-                <Card.Title>Manage your linked accounts</Card.Title>
+                <Card.Title>Halda oma ühendatud kontosi</Card.Title>
                 <Platform name='Swedbank' />
                 <Platform name='SEB' />
                 <Platform name='Luminor' />

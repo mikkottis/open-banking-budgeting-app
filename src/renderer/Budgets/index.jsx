@@ -55,7 +55,7 @@ class Budgets extends Component {
         <tr key={key}>
           <td>{budget.name}</td>
           <td>{budget.amount}</td>
-          <td className='tableActionColumn'><Button variant='danger' onClick={() => this.onDeleteBudget(key)}>Delete</Button></td>
+          <td className='tableActionColumn'><Button variant='danger' onClick={() => this.onDeleteBudget(key)}>Kustuta</Button></td>
         </tr>
       )
     });
@@ -64,15 +64,15 @@ class Budgets extends Component {
       <Table>
         <thead>
           <tr>
-            <th className='tableHeader'>Name</th>
-            <th className='tableHeader'>Amount</th>
+            <th className='tableHeader'>Nimi</th>
+            <th className='tableHeader'>Summa</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           {rows}
           <tr className='budgetTotalRow'>
-            <td><b>Total</b></td>
+            <td><b>Kokku</b></td>
             <td><b>{this.calculateTotalBudget()}</b></td>
             <td></td>
           </tr>
@@ -88,11 +88,11 @@ class Budgets extends Component {
       <Container>
         <Row>
             <Card className='tabCard'>
-              <Card.Header>Budgets</Card.Header>
+              <Card.Header>Eelarved</Card.Header>
               <Card.Body>
-                <Card.Title>Manage your budgets</Card.Title>
+                <Card.Title>Halda oma eelarveid</Card.Title>
                 {this.renderBudgetsTable()}
-                <Button onClick={() => this.setState({ isBudgetModalVisible: true })}>Add category</Button>
+                <Button onClick={() => this.setState({ isBudgetModalVisible: true })}>Lisa eelarve</Button>
                 <BudgetModal
                   isVisible={isBudgetModalVisible}
                   handleClose={this.closeBudgetModal}

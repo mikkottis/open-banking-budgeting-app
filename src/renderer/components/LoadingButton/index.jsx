@@ -5,10 +5,11 @@ import { Button, Spinner } from 'react-bootstrap';
 import './styles.css';
 
 const LoadingButton = (props) => {
-  const { title, loading, onClick } = props;
+  const { title, loading, onClick, variant } = props;
 
   return (
     <Button
+      variant={variant}
       className='loadingBtn'
       disabled={loading}
       onClick={onClick}
@@ -24,7 +25,12 @@ const LoadingButton = (props) => {
 LoadingButton.propTypes = {
   title: PropTypes.string.isRequired,
   loading: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  variant: PropTypes.string
 };
+
+LoadingButton.defaultProps = {
+  variant: 'primary'
+}
 
 export default LoadingButton

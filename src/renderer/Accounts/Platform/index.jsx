@@ -85,7 +85,7 @@ class Platform extends Component {
           <Table>
             <thead>
               <tr>
-                <th className='tableHeader'>Account name</th>
+                <th className='tableHeader'>Konto nimi</th>
                 <th className='tableHeader'>IBAN</th>
               </tr>
             </thead>
@@ -95,9 +95,10 @@ class Platform extends Component {
           </Table>
           )}
         <LoadingButton
-          title='Disconnect'
+          title='Tühista ühendus'
           loading={isUnauthenticating}
           onClick={() => this.onUnauthenticate()}
+          variant='danger'
         />
       </React.Fragment>
     )
@@ -108,7 +109,7 @@ class Platform extends Component {
 
     return (
       <LoadingButton
-        title='Authenticate'
+        title='Ühenda'
         loading={isAuthenticating}
         onClick={() => this.onAuthenticate()}
       />

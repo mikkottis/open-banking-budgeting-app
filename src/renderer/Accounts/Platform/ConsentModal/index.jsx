@@ -80,7 +80,7 @@ class ConsentModal extends Component {
         <thead>
           <tr>
             <th></th>
-            <th>Account name</th>
+            <th>Konto nimi</th>
             <th>IBAN</th>
           </tr>
         </thead>
@@ -98,17 +98,17 @@ class ConsentModal extends Component {
     return (
       <Modal show={isVisible} onHide={this.onClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Choose which accounts to sync</Modal.Title>
+          <Modal.Title>Valige, millised kontod ühendada.</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {this.renderAccounts()}
         </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={this.onClose}>
-            Close
+            Sulge
           </Button>
           <LoadingButton
-            title='Sync'
+            title='Ühenda'
             loading={isSaving}
             onClick={this.onSync}
           />

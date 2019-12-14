@@ -59,7 +59,7 @@ class Overview extends Component {
     const budgets = getBudgets();
 
     if (Object.keys(budgets).length === 0) {
-      return 'No budgets to track';
+      return 'Puuduvad eelarved, mida järgida.';
     }
 
     const rows = Object.keys(transactionsByBudget).map(budgetId => {
@@ -69,7 +69,7 @@ class Overview extends Component {
       if (!budget) {
         return (
           <tr key='uncategorized'>
-            <td>Uncategorized</td>
+            <td>Kategoriseerimata</td>
             <td>N/A</td>
             <td>{budgetExpenses}</td>
             <td>{0 - budgetExpenses}</td>
@@ -95,10 +95,10 @@ class Overview extends Component {
       <Table>
         <thead>
           <tr>
-            <th className='tableHeader'>Category</th>
-            <th className='tableHeader'>Budgeted</th>
-            <th className='tableHeader'>Spent</th>
-            <th className='tableHeader'>Balance</th>
+            <th className='tableHeader'>Eelarve</th>
+            <th className='tableHeader'>Ettenähtud</th>
+            <th className='tableHeader'>Kulutad</th>
+            <th className='tableHeader'>Jääk</th>
           </tr>
         </thead>
         <tbody>
@@ -113,7 +113,7 @@ class Overview extends Component {
       <Container>
         <Row>
             <Card className='tabCard'>
-              <Card.Header>Overview</Card.Header>
+              <Card.Header>Ülevaade</Card.Header>
               <Card.Body>
                 {this.renderOverviewTable()}
               </Card.Body>

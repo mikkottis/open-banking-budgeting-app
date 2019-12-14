@@ -5,21 +5,21 @@
         "iban": "EE479243815346847962",
         "currency": "EUR",
         "cashAccountType": "CurrentAccount",
-        "name": "SEB Account 1"
+        "name": "SEB Konto 1"
      },
      {
         "resourceId": "2bb9d53c-0fdd-43ff-b670-342fbcb0536b",
         "iban": "EE168938346545967075",
         "currency": "EUR",
         "cashAccountType": "CurrentAccount",
-        "name": "SEB Account 2"
+        "name": "SEB Konto 2"
      },
      {
         "resourceId": "7825ad19-7b62-40aa-b68e-7dbff9b85bfc",
         "iban": "EE168938346545967075",
         "currency": "EUR",
         "cashAccountType": "CurrentAccount",
-        "name": "SEB Account 3"
+        "name": "SEB Konto 3"
      }
   ],
   "swedbank": [
@@ -28,21 +28,21 @@
        "iban": "EE041288227182871363",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Swedbank Account 1"
+       "name": "Swedbank Konto 1"
     },
     {
        "resourceId": "5c44fcf5-709f-4205-894c-ba9f5b2ec004",
        "iban": "EE661254982739643446",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Swedbank Account 2"
+       "name": "Swedbank Konto 2"
     },
     {
        "resourceId": "d9a1b050-6944-4314-868f-822dfd3a608d",
        "iban": "EE881278895598976281",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Swedbank Account 3"
+       "name": "Swedbank Konto 3"
     }
   ],
   "luminor": [
@@ -51,21 +51,21 @@
        "iban": "EE561216222929884195",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Luminor Account 1"
+       "name": "Luminor Konto 1"
     },
     {
        "resourceId": "97764a93-1683-4a9f-8e6d-b9efb088079f",
        "iban": "EE021231587925781420",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Luminor Account 2"
+       "name": "Luminor Konto 2"
     },
     {
        "resourceId": "739450f5-01e0-4c2f-919b-4c2fd5dcc555",
        "iban": "EE761281873863198693",
        "currency": "EUR",
        "cashAccountType": "CurrentAccount",
-       "name": "Luminor Account 3"
+       "name": "Luminor Konto 3"
     }
   ]
 }

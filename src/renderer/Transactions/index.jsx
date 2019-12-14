@@ -32,9 +32,9 @@ class Transactions extends Component {
       <Container>
         <Row>
             <Card className='tabCard'>
-              <Card.Header>Transactions</Card.Header>
+              <Card.Header>Tehingud</Card.Header>
               <Card.Body>
-                <Card.Title>Categorize your transactions</Card.Title>
+                <Card.Title>Kategoriseeri oma tehingud</Card.Title>
                 {this.renderAccountTransactions('swedbank')}
                 {this.renderAccountTransactions('seb')}
                 {this.renderAccountTransactions('luminor')}

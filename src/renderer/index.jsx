@@ -15,16 +15,16 @@ const App = props => {
       <Row>
         <Col>
           <Tabs defaultActiveKey='overview'>
-            <Tab eventKey='overview' title='Overview'>
+            <Tab eventKey='overview' title='Ülevaade'>
               <Overview />
             </Tab>
-            <Tab eventKey='accounts' title='Accounts'>
+            <Tab eventKey='accounts' title='Kontod'>
               <Accounts />
             </Tab>
-            <Tab eventKey='budgets' title='Budgets'>
+            <Tab eventKey='budgets' title='Eelarved'>
               <Budgets />
             </Tab>
-            <Tab eventKey='transactions' title='Transactions'>
+            <Tab eventKey='transactions' title='Tehingud'>
               <Transactions />
             </Tab>
           </Tabs>
