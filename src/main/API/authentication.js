@@ -24,8 +24,3 @@ exports.hasToken = (platformName) => {
   const storage = new Storage('authentication');
   return Boolean(storage.get(platformName.toLowerCase()));
 }
-
-exports.getToken = (platformName) => {
-  const storage = new Storage('authentication');
-  return storage.get(platformName.toLowerCase());
-}
