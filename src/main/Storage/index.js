@@ -1,4 +1,4 @@
-const electron = require('electron');
+const { app } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -24,9 +24,9 @@ const unlinkFile = (path) => {
 
 class Storage {
   constructor(storageName) {
-    const userDataPath = (electron.app || electron.remote.app).getPath('userData');
+    const appDataPath = `${app.getPath('appData')}/open-banking-budgeting-app`;
 
-    this.path = path.join(userDataPath, `${storageName}.json`);
+    this.path = path.join(appDataPath, `${storageName}.json`);
     this.data = parseFile(this.path);
   }
   
