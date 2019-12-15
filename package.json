@@ -6,7 +6,12 @@
   "homepage": "./",
   "build": {
     "appId": "com.budgeting.app",
-    "extends": null
+    "extends": null,
+    "files": [
+      "src/**/*",
+      "build/**/*",
+      "node_modules/**/*"
+    ]
   },
   "scripts": {
     "electron": "electron .",
